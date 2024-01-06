@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Auto-ElectricHub.com</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+       <a href="index.html">Lucban Auto-ElectricHub</a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+		<li><a href="Feedback.html">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="center">
+	 <div class="About-1">
+    <div class="title">About Automotive Electrical Systems</div>
+    <div class="sub_title">The Electricians</div>
+      <div class="btns">
+         <button onclick="toggleProfile('profile1')">Verde, Alver John L.</button>
+        <button onclick="toggleProfile('profile2')">Tenorio, Ledrick A.</button>
+      </div>
+	   <!-- Profiles -->
+      <div id="profile1" class="profile">
+        <!-- Profile content for Verde -->
+		<img src="Verde.jpg" alt="Verde" style="width: 200px; height: auto;">
+        <h2 style="color: white;">Verde, Alver John L.</h2>
+        <!-- Add profile details here -->
+      </div>
+      <div id="profile2" class="profile">
+        <!-- Profile content for Tenorio -->
+		<img src="Tenorio.jpg" alt="Tenorio" style="width: 200px; height: auto;">
+        <h2 style="color: white;">Tenorio, Ledrick A.</h2>
+        <!-- Add profile details here -->
+      </div>
+	<div class="dropdown">
+		<button id="careerButton" class="dropbtn">Career Opportunities</button>
+			<div id="careerContent" class="dropdown-content">
+            <div onclick="toggleContent('career')">
+              <ul><h3>Career Opportunities</h3></ul>
+              <ul><h4>Vehicle Maintenance and Repair:</h4></ul>
+              <ul><p>Automotive electricians are essential in the automotive industry, specializing in the maintenance and repair of electrical systems in vehicles. They diagnose and fix issues related to lighting, ignition, wiring, and electronic components.</p></ul>
+              <ul><h4>Manufacturing and Production:</h4></ul>
+              <ul><p>In the manufacturing sector, automotive electricians contribute to the assembly of vehicles by installing and testing electrical components. This includes working in automotive plants and facilities dedicated to producing cars and other automotive products.</p></ul>
+              <ul><h4>Automotive Technology Development:</h4></ul>
+              <ul><p>Automotive electricians play a vital role in the research and development of new automotive technologies. This involves working on innovations related to electric and hybrid vehicles, advanced driver-assistance systems, and smart vehicle connectivity.</p></ul>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+			<button id="environmentalButton" class="dropbtn">Environmental, Social and Purpose</button>
+				<div id="environmentalSocialPurposeContent" class="dropdown-content" style="display: none;">
+            <!-- Environmental, Social and Purpose content -->
+            <div>
+              <ul>
+                <h3>Environmental, Social and Purpose</h3>
+              </ul>
+              <ul>
+                <h4>Environmental Impact:</h4>
+                <li><p><i>Energy Efficiency: </i>Automotive electricians contribute to energy efficiency by optimizing the performance of electric and hybrid vehicles, reducing overall energy consumption.</p></li>
+				<li><p><i>Emission Reduction: </i>The development and maintenance of electric vehicles contribute to lowering greenhouse gas emissions, promoting environmental sustainability.</p></li>
+			  </ul>
+              <ul>
+                <h4>Social Impact:</h4>
+                 <li><p><i>Safety:  </i>Automotive electricians prioritize safety by ensuring proper functioning of safety-related electrical components, such as airbags and anti-lock braking systems (ABS).</p></li>
+				<li><p><i>Job Creation:  </i>The automotive industry, including electric vehicle production, contributes to job creation and economic growth in local communities.</p></li>
+		      </ul>
+           
+            </div>
+          </div>
+        </div>
+		<div class="dropdown">
+  <button onclick="togglePurposeContent()" class="dropbtn">Purpose and Ethical Considerations</button>
+  <div id="purposeContent" class="dropdown-content" style="display: none;">
+    <!-- Purpose and Ethical Considerations content -->
+    <div>
+      <ul>
+        <h3>Purpose and Ethical Considerations</h3>
+        <li>
+          <p><i>Quality Workmanship:</i> Automotive electricians uphold high standards of workmanship, ensuring the reliability and safety of electrical systems in vehicles.</p>
+        </li>
+        <li>
+          <p><i>Innovation:</i> Contributing to the development of cutting-edge automotive technologies allows automotive electricians to be part of the industry's innovation and progress.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+		
+      </div>
+    </div>
+
+   <script>
+  // Get all the anchor tags within the menu
+  const menuItems = document.querySelectorAll('.menu ul li a');
+
+  // Loop through each menu item
+  menuItems.forEach(item => {
+    // Check if the href matches the current URL
+    if (window.location.href.includes(item.getAttribute('href'))) {
+      // Add 'active' class to the matched menu item
+      item.classList.add('active');
+    }
+
+    // Add a click event listener to each menu item
+    item.addEventListener('click', function(event) {
+      // Remove 'active' class from all menu items
+      menuItems.forEach(link => link.classList.remove('active'));
+
+      // Add 'active' class to the clicked menu item
+      this.classList.add('active');
+    });
+  });
+  
+   // Function to hide all profiles
+    function hideAllProfiles() {
+      var profiles = document.querySelectorAll('.profile');
+      profiles.forEach(function(profile) {
+        profile.classList.remove('active-profile');
+      });
+    }
+
+    // Function to toggle profile visibility
+    function toggleProfile(profileId) {
+      var profile = document.getElementById(profileId);
+      var isActive = profile.classList.contains('active-profile');
+
+      // Hide all profiles first
+      hideAllProfiles();
+
+      // Show the clicked profile if it's not already active
+      if (!isActive) {
+        profile.classList.add('active-profile');
+      }
+    }
+	
+function toggleCareerContent() {
+  var careerContent = document.getElementById('careerContent');
+  var environmentalContent = document.getElementById('environmentalSocialPurposeContent');
+  var purposeContent = document.getElementById('purposeContent');
+
+  if (careerContent.style.display === 'block') {
+    careerContent.style.display = 'none';
+  } else {
+    careerContent.style.display = 'block';
+    environmentalContent.style.display = 'none';
+    purposeContent.style.display = 'none';
+  }
+}
+
+function toggleEnvironmentalContent() {
+  var careerContent = document.getElementById('careerContent');
+  var environmentalContent = document.getElementById('environmentalSocialPurposeContent');
+  var purposeContent = document.getElementById('purposeContent');
+
+  if (environmentalContent.style.display === 'block') {
+    environmentalContent.style.display = 'none';
+  } else {
+    environmentalContent.style.display = 'block';
+    careerContent.style.display = 'none';
+    purposeContent.style.display = 'none';
+  }
+}
+
+function togglePurposeContent() {
+  var careerContent = document.getElementById('careerContent');
+  var environmentalContent = document.getElementById('environmentalSocialPurposeContent');
+  var purposeContent = document.getElementById('purposeContent');
+
+  if (purposeContent.style.display === 'block') {
+    purposeContent.style.display = 'none';
+  } else {
+    purposeContent.style.display = 'block';
+    careerContent.style.display = 'none';
+    environmentalContent.style.display = 'none';
+  }
+}
+
+// Event listeners for the buttons
+var careerButton = document.getElementById('careerButton');
+var environmentalButton = document.getElementById('environmentalButton');
+var purposeButton = document.getElementById('purposeButton');
+
+careerButton.addEventListener('click', function() {
+  toggleCareerContent();
+});
+
+environmentalButton.addEventListener('click', function() {
+  toggleEnvironmentalContent();
+});
+
+purposeButton.addEventListener('click', function() {
+  togglePurposeContent();
+});
+
+</script>
+</body>
+</html>

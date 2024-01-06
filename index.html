@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Auto-ElectricHub.com</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="index.html">Lucban Auto-ElectricHub</a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+		<li><a href="Feedback.html">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+	 <div class="content">
+  <div class="center">
+   <div class="welding-image welding-1">
+  <div class="title">Automotive Electrical System</div>
+  <div class="sub_title">Spark Your Enthusiasm for Automotive Electronics</div>
+</div>
+	<div class="welding-image welding-3">
+	
+	</div>
+ <!-- Second Image: Welding2 -->
+      <div class="welding-image welding-2">
+        <div class="title">What is <mark>Automotive Electrical</mark>?</div>
+        <div class="purpose">
+          <p>Automotive Electrical Systems play a pivotal role in modern vehicles, serving as the nerve center for various components. Understanding and harnessing the power of Automotive Electricity is crucial in the automotive industry due to its versatility, adaptability to different vehicle types, and cost-effectiveness. Its ability to power diverse electrical components, facilitate vehicle diagnostics, and contribute to advancements like electric vehicles make it a fundamental aspect of automotive engineering. The simplicity of Automotive Electrical Systems also makes it an essential topic for training automotive technicians, ensuring its continued significance in vehicle design, maintenance, and troubleshooting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+   <script>
+  // Get all the anchor tags within the menu
+  const menuItems = document.querySelectorAll('.menu ul li a');
+
+  // Loop through each menu item
+  menuItems.forEach(item => {
+    // Check if the href matches the current URL
+    if (window.location.href.includes(item.getAttribute('href'))) {
+      // Add 'active' class to the matched menu item
+      item.classList.add('active');
+    }
+
+    // Add a click event listener to each menu item
+    item.addEventListener('click', function(event) {
+      // Remove 'active' class from all menu items
+      menuItems.forEach(link => link.classList.remove('active'));
+
+      // Add 'active' class to the clicked menu item
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
